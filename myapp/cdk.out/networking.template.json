@@ -1,0 +1,635 @@
+{
+  "Resources": {
+    "webappvpc0C6EE273": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/Resource"
+      }
+    },
+    "webappvpcPUBLICSubnet1SubnetEEEB3814": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/24",
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "PUBLIC"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          },
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/PUBLICSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PUBLICSubnet1/Subnet"
+      }
+    },
+    "webappvpcPUBLICSubnet1RouteTable9FF45B41": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/PUBLICSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PUBLICSubnet1/RouteTable"
+      }
+    },
+    "webappvpcPUBLICSubnet1RouteTableAssociation70CC3AF6": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "webappvpcPUBLICSubnet1RouteTable9FF45B41"
+        },
+        "SubnetId": {
+          "Ref": "webappvpcPUBLICSubnet1SubnetEEEB3814"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PUBLICSubnet1/RouteTableAssociation"
+      }
+    },
+    "webappvpcPUBLICSubnet1DefaultRoute871FD3B1": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "webappvpcPUBLICSubnet1RouteTable9FF45B41"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "webappvpcIGW8AC6CB3B"
+        }
+      },
+      "DependsOn": [
+        "webappvpcVPCGW27AC9163"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PUBLICSubnet1/DefaultRoute"
+      }
+    },
+    "webappvpcPUBLICSubnet1EIPA7A3DFEF": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "Domain": "vpc",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/PUBLICSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PUBLICSubnet1/EIP"
+      }
+    },
+    "webappvpcPUBLICSubnet1NATGateway1B501026": {
+      "Type": "AWS::EC2::NatGateway",
+      "Properties": {
+        "AllocationId": {
+          "Fn::GetAtt": [
+            "webappvpcPUBLICSubnet1EIPA7A3DFEF",
+            "AllocationId"
+          ]
+        },
+        "SubnetId": {
+          "Ref": "webappvpcPUBLICSubnet1SubnetEEEB3814"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/PUBLICSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PUBLICSubnet1/NATGateway"
+      }
+    },
+    "webappvpcPUBLICSubnet2Subnet9E45D106": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.1.0/24",
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            1,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "PUBLIC"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          },
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/PUBLICSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PUBLICSubnet2/Subnet"
+      }
+    },
+    "webappvpcPUBLICSubnet2RouteTable122BF0E3": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/PUBLICSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PUBLICSubnet2/RouteTable"
+      }
+    },
+    "webappvpcPUBLICSubnet2RouteTableAssociation0E612562": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "webappvpcPUBLICSubnet2RouteTable122BF0E3"
+        },
+        "SubnetId": {
+          "Ref": "webappvpcPUBLICSubnet2Subnet9E45D106"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PUBLICSubnet2/RouteTableAssociation"
+      }
+    },
+    "webappvpcPUBLICSubnet2DefaultRoute71073CC9": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "webappvpcPUBLICSubnet2RouteTable122BF0E3"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "webappvpcIGW8AC6CB3B"
+        }
+      },
+      "DependsOn": [
+        "webappvpcVPCGW27AC9163"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PUBLICSubnet2/DefaultRoute"
+      }
+    },
+    "webappvpcPUBLICSubnet2EIP60D4D212": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "Domain": "vpc",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/PUBLICSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PUBLICSubnet2/EIP"
+      }
+    },
+    "webappvpcPUBLICSubnet2NATGateway7E19097F": {
+      "Type": "AWS::EC2::NatGateway",
+      "Properties": {
+        "AllocationId": {
+          "Fn::GetAtt": [
+            "webappvpcPUBLICSubnet2EIP60D4D212",
+            "AllocationId"
+          ]
+        },
+        "SubnetId": {
+          "Ref": "webappvpcPUBLICSubnet2Subnet9E45D106"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/PUBLICSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PUBLICSubnet2/NATGateway"
+      }
+    },
+    "webappvpcPRIVATESubnet1SubnetF3151BD1": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.2.0/24",
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "PRIVATE"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Private"
+          },
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/PRIVATESubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PRIVATESubnet1/Subnet"
+      }
+    },
+    "webappvpcPRIVATESubnet1RouteTable8A8B38CC": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/PRIVATESubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PRIVATESubnet1/RouteTable"
+      }
+    },
+    "webappvpcPRIVATESubnet1RouteTableAssociation861595FE": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "webappvpcPRIVATESubnet1RouteTable8A8B38CC"
+        },
+        "SubnetId": {
+          "Ref": "webappvpcPRIVATESubnet1SubnetF3151BD1"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PRIVATESubnet1/RouteTableAssociation"
+      }
+    },
+    "webappvpcPRIVATESubnet1DefaultRouteBB1F10BC": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "webappvpcPRIVATESubnet1RouteTable8A8B38CC"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": {
+          "Ref": "webappvpcPUBLICSubnet1NATGateway1B501026"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PRIVATESubnet1/DefaultRoute"
+      }
+    },
+    "webappvpcPRIVATESubnet2Subnet184E5700": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.3.0/24",
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            1,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "PRIVATE"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Private"
+          },
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/PRIVATESubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PRIVATESubnet2/Subnet"
+      }
+    },
+    "webappvpcPRIVATESubnet2RouteTableA30D5373": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/PRIVATESubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PRIVATESubnet2/RouteTable"
+      }
+    },
+    "webappvpcPRIVATESubnet2RouteTableAssociation116CE876": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "webappvpcPRIVATESubnet2RouteTableA30D5373"
+        },
+        "SubnetId": {
+          "Ref": "webappvpcPRIVATESubnet2Subnet184E5700"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PRIVATESubnet2/RouteTableAssociation"
+      }
+    },
+    "webappvpcPRIVATESubnet2DefaultRoute18D38D85": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "webappvpcPRIVATESubnet2RouteTableA30D5373"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": {
+          "Ref": "webappvpcPUBLICSubnet2NATGateway7E19097F"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/PRIVATESubnet2/DefaultRoute"
+      }
+    },
+    "webappvpcISOLATEDSubnet1SubnetDC1AC2C1": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.4.0/24",
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "ISOLATED"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Isolated"
+          },
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/ISOLATEDSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/ISOLATEDSubnet1/Subnet"
+      }
+    },
+    "webappvpcISOLATEDSubnet1RouteTable8A980272": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/ISOLATEDSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/ISOLATEDSubnet1/RouteTable"
+      }
+    },
+    "webappvpcISOLATEDSubnet1RouteTableAssociation8DD20FAF": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "webappvpcISOLATEDSubnet1RouteTable8A980272"
+        },
+        "SubnetId": {
+          "Ref": "webappvpcISOLATEDSubnet1SubnetDC1AC2C1"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/ISOLATEDSubnet1/RouteTableAssociation"
+      }
+    },
+    "webappvpcISOLATEDSubnet2Subnet3EA396DB": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.5.0/24",
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            1,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "ISOLATED"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Isolated"
+          },
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/ISOLATEDSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/ISOLATEDSubnet2/Subnet"
+      }
+    },
+    "webappvpcISOLATEDSubnet2RouteTableB4C6BD79": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc/ISOLATEDSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/ISOLATEDSubnet2/RouteTable"
+      }
+    },
+    "webappvpcISOLATEDSubnet2RouteTableAssociation482D3ED4": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "webappvpcISOLATEDSubnet2RouteTableB4C6BD79"
+        },
+        "SubnetId": {
+          "Ref": "webappvpcISOLATEDSubnet2Subnet3EA396DB"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/ISOLATEDSubnet2/RouteTableAssociation"
+      }
+    },
+    "webappvpcIGW8AC6CB3B": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "networking/webapp-vpc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/IGW"
+      }
+    },
+    "webappvpcVPCGW27AC9163": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": "webappvpc0C6EE273"
+        },
+        "InternetGatewayId": {
+          "Ref": "webappvpcIGW8AC6CB3B"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "networking/webapp-vpc/VPCGW"
+      }
+    }
+  },
+  "Outputs": {
+    "Output": {
+      "Value": {
+        "Ref": "webappvpc0C6EE273"
+      }
+    },
+    "ExportsOutputRefwebappvpc0C6EE273E8F9B970": {
+      "Value": {
+        "Ref": "webappvpc0C6EE273"
+      },
+      "Export": {
+        "Name": "networking:ExportsOutputRefwebappvpc0C6EE273E8F9B970"
+      }
+    },
+    "ExportsOutputRefwebappvpcPUBLICSubnet1SubnetEEEB38141649E5BC": {
+      "Value": {
+        "Ref": "webappvpcPUBLICSubnet1SubnetEEEB3814"
+      },
+      "Export": {
+        "Name": "networking:ExportsOutputRefwebappvpcPUBLICSubnet1SubnetEEEB38141649E5BC"
+      }
+    },
+    "ExportsOutputRefwebappvpcPRIVATESubnet1SubnetF3151BD1A331375F": {
+      "Value": {
+        "Ref": "webappvpcPRIVATESubnet1SubnetF3151BD1"
+      },
+      "Export": {
+        "Name": "networking:ExportsOutputRefwebappvpcPRIVATESubnet1SubnetF3151BD1A331375F"
+      }
+    },
+    "ExportsOutputRefwebappvpcPRIVATESubnet2Subnet184E570066995D43": {
+      "Value": {
+        "Ref": "webappvpcPRIVATESubnet2Subnet184E5700"
+      },
+      "Export": {
+        "Name": "networking:ExportsOutputRefwebappvpcPRIVATESubnet2Subnet184E570066995D43"
+      }
+    },
+    "ExportsOutputRefwebappvpcPUBLICSubnet2Subnet9E45D106707E40BE": {
+      "Value": {
+        "Ref": "webappvpcPUBLICSubnet2Subnet9E45D106"
+      },
+      "Export": {
+        "Name": "networking:ExportsOutputRefwebappvpcPUBLICSubnet2Subnet9E45D106707E40BE"
+      }
+    }
+  }
+}

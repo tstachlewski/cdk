@@ -1,0 +1,1477 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "networking": {
+        "id": "networking",
+        "path": "networking",
+        "children": {
+          "webapp-vpc": {
+            "id": "webapp-vpc",
+            "path": "networking/webapp-vpc",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "networking/webapp-vpc/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                  "aws:cdk:cloudformation:props": {
+                    "cidrBlock": "10.0.0.0/16",
+                    "enableDnsHostnames": true,
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "networking/webapp-vpc"
+                      }
+                    ]
+                  }
+                }
+              },
+              "PUBLICSubnet1": {
+                "id": "PUBLICSubnet1",
+                "path": "networking/webapp-vpc/PUBLICSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "networking/webapp-vpc/PUBLICSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.0.0/24",
+                        "vpcId": {
+                          "Ref": "webappvpc0C6EE273"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "PUBLIC"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/PUBLICSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "networking/webapp-vpc/PUBLICSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "networking/webapp-vpc/PUBLICSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "webappvpc0C6EE273"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/PUBLICSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "networking/webapp-vpc/PUBLICSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "webappvpcPUBLICSubnet1RouteTable9FF45B41"
+                        },
+                        "subnetId": {
+                          "Ref": "webappvpcPUBLICSubnet1SubnetEEEB3814"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "networking/webapp-vpc/PUBLICSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "webappvpcPUBLICSubnet1RouteTable9FF45B41"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "webappvpcIGW8AC6CB3B"
+                        }
+                      }
+                    }
+                  },
+                  "EIP": {
+                    "id": "EIP",
+                    "path": "networking/webapp-vpc/PUBLICSubnet1/EIP",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+                      "aws:cdk:cloudformation:props": {
+                        "domain": "vpc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/PUBLICSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "NATGateway": {
+                    "id": "NATGateway",
+                    "path": "networking/webapp-vpc/PUBLICSubnet1/NATGateway",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
+                      "aws:cdk:cloudformation:props": {
+                        "allocationId": {
+                          "Fn::GetAtt": [
+                            "webappvpcPUBLICSubnet1EIPA7A3DFEF",
+                            "AllocationId"
+                          ]
+                        },
+                        "subnetId": {
+                          "Ref": "webappvpcPUBLICSubnet1SubnetEEEB3814"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/PUBLICSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "PUBLICSubnet2": {
+                "id": "PUBLICSubnet2",
+                "path": "networking/webapp-vpc/PUBLICSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "networking/webapp-vpc/PUBLICSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.1.0/24",
+                        "vpcId": {
+                          "Ref": "webappvpc0C6EE273"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "PUBLIC"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/PUBLICSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "networking/webapp-vpc/PUBLICSubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "networking/webapp-vpc/PUBLICSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "webappvpc0C6EE273"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/PUBLICSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "networking/webapp-vpc/PUBLICSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "webappvpcPUBLICSubnet2RouteTable122BF0E3"
+                        },
+                        "subnetId": {
+                          "Ref": "webappvpcPUBLICSubnet2Subnet9E45D106"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "networking/webapp-vpc/PUBLICSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "webappvpcPUBLICSubnet2RouteTable122BF0E3"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "webappvpcIGW8AC6CB3B"
+                        }
+                      }
+                    }
+                  },
+                  "EIP": {
+                    "id": "EIP",
+                    "path": "networking/webapp-vpc/PUBLICSubnet2/EIP",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+                      "aws:cdk:cloudformation:props": {
+                        "domain": "vpc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/PUBLICSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "NATGateway": {
+                    "id": "NATGateway",
+                    "path": "networking/webapp-vpc/PUBLICSubnet2/NATGateway",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
+                      "aws:cdk:cloudformation:props": {
+                        "allocationId": {
+                          "Fn::GetAtt": [
+                            "webappvpcPUBLICSubnet2EIP60D4D212",
+                            "AllocationId"
+                          ]
+                        },
+                        "subnetId": {
+                          "Ref": "webappvpcPUBLICSubnet2Subnet9E45D106"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/PUBLICSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "PRIVATESubnet1": {
+                "id": "PRIVATESubnet1",
+                "path": "networking/webapp-vpc/PRIVATESubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "networking/webapp-vpc/PRIVATESubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.2.0/24",
+                        "vpcId": {
+                          "Ref": "webappvpc0C6EE273"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "PRIVATE"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/PRIVATESubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "networking/webapp-vpc/PRIVATESubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "networking/webapp-vpc/PRIVATESubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "webappvpc0C6EE273"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/PRIVATESubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "networking/webapp-vpc/PRIVATESubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "webappvpcPRIVATESubnet1RouteTable8A8B38CC"
+                        },
+                        "subnetId": {
+                          "Ref": "webappvpcPRIVATESubnet1SubnetF3151BD1"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "networking/webapp-vpc/PRIVATESubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "webappvpcPRIVATESubnet1RouteTable8A8B38CC"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "webappvpcPUBLICSubnet1NATGateway1B501026"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "PRIVATESubnet2": {
+                "id": "PRIVATESubnet2",
+                "path": "networking/webapp-vpc/PRIVATESubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "networking/webapp-vpc/PRIVATESubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.3.0/24",
+                        "vpcId": {
+                          "Ref": "webappvpc0C6EE273"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "PRIVATE"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/PRIVATESubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "networking/webapp-vpc/PRIVATESubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "networking/webapp-vpc/PRIVATESubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "webappvpc0C6EE273"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/PRIVATESubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "networking/webapp-vpc/PRIVATESubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "webappvpcPRIVATESubnet2RouteTableA30D5373"
+                        },
+                        "subnetId": {
+                          "Ref": "webappvpcPRIVATESubnet2Subnet184E5700"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "networking/webapp-vpc/PRIVATESubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "webappvpcPRIVATESubnet2RouteTableA30D5373"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "webappvpcPUBLICSubnet2NATGateway7E19097F"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "ISOLATEDSubnet1": {
+                "id": "ISOLATEDSubnet1",
+                "path": "networking/webapp-vpc/ISOLATEDSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "networking/webapp-vpc/ISOLATEDSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.4.0/24",
+                        "vpcId": {
+                          "Ref": "webappvpc0C6EE273"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "ISOLATED"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Isolated"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/ISOLATEDSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "networking/webapp-vpc/ISOLATEDSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "networking/webapp-vpc/ISOLATEDSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "webappvpc0C6EE273"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/ISOLATEDSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "networking/webapp-vpc/ISOLATEDSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "webappvpcISOLATEDSubnet1RouteTable8A980272"
+                        },
+                        "subnetId": {
+                          "Ref": "webappvpcISOLATEDSubnet1SubnetDC1AC2C1"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "ISOLATEDSubnet2": {
+                "id": "ISOLATEDSubnet2",
+                "path": "networking/webapp-vpc/ISOLATEDSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "networking/webapp-vpc/ISOLATEDSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.5.0/24",
+                        "vpcId": {
+                          "Ref": "webappvpc0C6EE273"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "ISOLATED"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Isolated"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/ISOLATEDSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "networking/webapp-vpc/ISOLATEDSubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "networking/webapp-vpc/ISOLATEDSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "webappvpc0C6EE273"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "networking/webapp-vpc/ISOLATEDSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "networking/webapp-vpc/ISOLATEDSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "webappvpcISOLATEDSubnet2RouteTableB4C6BD79"
+                        },
+                        "subnetId": {
+                          "Ref": "webappvpcISOLATEDSubnet2Subnet3EA396DB"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "IGW": {
+                "id": "IGW",
+                "path": "networking/webapp-vpc/IGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "networking/webapp-vpc"
+                      }
+                    ]
+                  }
+                }
+              },
+              "VPCGW": {
+                "id": "VPCGW",
+                "path": "networking/webapp-vpc/VPCGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "webappvpc0C6EE273"
+                    },
+                    "internetGatewayId": {
+                      "Ref": "webappvpcIGW8AC6CB3B"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "Output": {
+            "id": "Output",
+            "path": "networking/Output"
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "networking/Exports",
+            "children": {
+              "Output{\"Ref\":\"webappvpc0C6EE273\"}": {
+                "id": "Output{\"Ref\":\"webappvpc0C6EE273\"}",
+                "path": "networking/Exports/Output{\"Ref\":\"webappvpc0C6EE273\"}"
+              },
+              "Output{\"Ref\":\"webappvpcPUBLICSubnet1SubnetEEEB3814\"}": {
+                "id": "Output{\"Ref\":\"webappvpcPUBLICSubnet1SubnetEEEB3814\"}",
+                "path": "networking/Exports/Output{\"Ref\":\"webappvpcPUBLICSubnet1SubnetEEEB3814\"}"
+              },
+              "Output{\"Ref\":\"webappvpcPRIVATESubnet1SubnetF3151BD1\"}": {
+                "id": "Output{\"Ref\":\"webappvpcPRIVATESubnet1SubnetF3151BD1\"}",
+                "path": "networking/Exports/Output{\"Ref\":\"webappvpcPRIVATESubnet1SubnetF3151BD1\"}"
+              },
+              "Output{\"Ref\":\"webappvpcPRIVATESubnet2Subnet184E5700\"}": {
+                "id": "Output{\"Ref\":\"webappvpcPRIVATESubnet2Subnet184E5700\"}",
+                "path": "networking/Exports/Output{\"Ref\":\"webappvpcPRIVATESubnet2Subnet184E5700\"}"
+              },
+              "Output{\"Ref\":\"webappvpcPUBLICSubnet2Subnet9E45D106\"}": {
+                "id": "Output{\"Ref\":\"webappvpcPUBLICSubnet2Subnet9E45D106\"}",
+                "path": "networking/Exports/Output{\"Ref\":\"webappvpcPUBLICSubnet2Subnet9E45D106\"}"
+              }
+            }
+          }
+        }
+      },
+      "compute": {
+        "id": "compute",
+        "path": "compute",
+        "children": {
+          "webapp-bastion": {
+            "id": "webapp-bastion",
+            "path": "compute/webapp-bastion",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "compute/webapp-bastion/Resource",
+                "children": {
+                  "InstanceSecurityGroup": {
+                    "id": "InstanceSecurityGroup",
+                    "path": "compute/webapp-bastion/Resource/InstanceSecurityGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "compute/webapp-bastion/Resource/InstanceSecurityGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "groupDescription": "compute/webapp-bastion/Resource/InstanceSecurityGroup",
+                            "securityGroupEgress": [
+                              {
+                                "cidrIp": "0.0.0.0/0",
+                                "description": "Allow all outbound traffic by default",
+                                "ipProtocol": "-1"
+                              }
+                            ],
+                            "securityGroupIngress": [
+                              {
+                                "cidrIp": "0.0.0.0/0",
+                                "ipProtocol": "tcp",
+                                "fromPort": 22,
+                                "toPort": 22,
+                                "description": "Internet access SSH"
+                              }
+                            ],
+                            "tags": [
+                              {
+                                "key": "Name",
+                                "value": "BastionHost"
+                              }
+                            ],
+                            "vpcId": {
+                              "Fn::ImportValue": "networking:ExportsOutputRefwebappvpc0C6EE273E8F9B970"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "InstanceRole": {
+                    "id": "InstanceRole",
+                    "path": "compute/webapp-bastion/Resource/InstanceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "compute/webapp-bastion/Resource/InstanceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "ec2.",
+                                          {
+                                            "Ref": "AWS::URLSuffix"
+                                          }
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "tags": [
+                              {
+                                "key": "Name",
+                                "value": "BastionHost"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "compute/webapp-bastion/Resource/InstanceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "compute/webapp-bastion/Resource/InstanceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "ssmmessages:*",
+                                        "ssm:UpdateInstanceInformation",
+                                        "ec2messages:*"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "webappbastionInstanceRoleDefaultPolicy187EA29A",
+                                "roles": [
+                                  {
+                                    "Ref": "webappbastionInstanceRoleCCAD90A4"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "InstanceProfile": {
+                    "id": "InstanceProfile",
+                    "path": "compute/webapp-bastion/Resource/InstanceProfile",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                      "aws:cdk:cloudformation:props": {
+                        "roles": [
+                          {
+                            "Ref": "webappbastionInstanceRoleCCAD90A4"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "compute/webapp-bastion/Resource/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                      "aws:cdk:cloudformation:props": {
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "iamInstanceProfile": {
+                          "Ref": "webappbastionInstanceProfile7E0622DF"
+                        },
+                        "imageId": {
+                          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                        },
+                        "instanceType": "t3.nano",
+                        "securityGroupIds": [
+                          {
+                            "Fn::GetAtt": [
+                              "webappbastionInstanceSecurityGroupBCBAD2DA",
+                              "GroupId"
+                            ]
+                          }
+                        ],
+                        "subnetId": {
+                          "Fn::ImportValue": "networking:ExportsOutputRefwebappvpcPUBLICSubnet1SubnetEEEB38141649E5BC"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "BastionHost"
+                          }
+                        ],
+                        "userData": {
+                          "Fn::Base64": "#!/bin/bash\nyum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "BastionHostId": {
+                "id": "BastionHostId",
+                "path": "compute/webapp-bastion/BastionHostId"
+              }
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "compute/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter"
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "compute/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118"
+          },
+          "webapp-autoscaling": {
+            "id": "webapp-autoscaling",
+            "path": "compute/webapp-autoscaling",
+            "children": {
+              "InstanceSecurityGroup": {
+                "id": "InstanceSecurityGroup",
+                "path": "compute/webapp-autoscaling/InstanceSecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "compute/webapp-autoscaling/InstanceSecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "compute/webapp-autoscaling/InstanceSecurityGroup",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "compute/webapp-autoscaling"
+                          }
+                        ],
+                        "vpcId": {
+                          "Fn::ImportValue": "networking:ExportsOutputRefwebappvpc0C6EE273E8F9B970"
+                        }
+                      }
+                    }
+                  },
+                  "from computewebappalbSecurityGroup896706AF:80": {
+                    "id": "from computewebappalbSecurityGroup896706AF:80",
+                    "path": "compute/webapp-autoscaling/InstanceSecurityGroup/from computewebappalbSecurityGroup896706AF:80",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                      "aws:cdk:cloudformation:props": {
+                        "ipProtocol": "tcp",
+                        "description": "ALB access 80 port of EC2 in Autoscaling Group",
+                        "fromPort": 80,
+                        "groupId": {
+                          "Fn::GetAtt": [
+                            "webappautoscalingInstanceSecurityGroupE4BB2108",
+                            "GroupId"
+                          ]
+                        },
+                        "sourceSecurityGroupId": {
+                          "Fn::GetAtt": [
+                            "webappalbSecurityGroup9E1600B5",
+                            "GroupId"
+                          ]
+                        },
+                        "toPort": 80
+                      }
+                    }
+                  }
+                }
+              },
+              "InstanceRole": {
+                "id": "InstanceRole",
+                "path": "compute/webapp-autoscaling/InstanceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "compute/webapp-autoscaling/InstanceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "ec2.",
+                                      {
+                                        "Ref": "AWS::URLSuffix"
+                                      }
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "compute/webapp-autoscaling"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "compute/webapp-autoscaling/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "webappautoscalingInstanceRoleDF3DFDA4"
+                      }
+                    ]
+                  }
+                }
+              },
+              "LaunchConfig": {
+                "id": "LaunchConfig",
+                "path": "compute/webapp-autoscaling/LaunchConfig",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::AutoScaling::LaunchConfiguration",
+                  "aws:cdk:cloudformation:props": {
+                    "imageId": {
+                      "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                    },
+                    "instanceType": "t3.micro",
+                    "iamInstanceProfile": {
+                      "Ref": "webappautoscalingInstanceProfile455B5E36"
+                    },
+                    "keyName": "accesskeys",
+                    "securityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "webappautoscalingInstanceSecurityGroupE4BB2108",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "userData": {
+                      "Fn::Base64": "#!/bin/bash\nyum update -y\nyum install -y httpd24 php56 mysql55-server php56-mysqlnd\nservice httpd start\nchkconfig httpd on\ncd /var/www/html\naws s3 cp --no-sign-request s3://tomash-public/examples/php/index.php ."
+                    }
+                  }
+                }
+              },
+              "ASG": {
+                "id": "ASG",
+                "path": "compute/webapp-autoscaling/ASG",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::AutoScaling::AutoScalingGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "maxSize": "2",
+                    "minSize": "2",
+                    "desiredCapacity": "2",
+                    "launchConfigurationName": {
+                      "Ref": "webappautoscalingLaunchConfig0EE48EA8"
+                    },
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "compute/webapp-autoscaling",
+                        "propagateAtLaunch": true
+                      }
+                    ],
+                    "targetGroupArns": [
+                      {
+                        "Ref": "webappalbmy80addTargetGroupGroup553ACDC6"
+                      }
+                    ],
+                    "vpcZoneIdentifier": [
+                      {
+                        "Fn::ImportValue": "networking:ExportsOutputRefwebappvpcPRIVATESubnet1SubnetF3151BD1A331375F"
+                      },
+                      {
+                        "Fn::ImportValue": "networking:ExportsOutputRefwebappvpcPRIVATESubnet2Subnet184E570066995D43"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "compute/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter"
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "compute/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118"
+          },
+          "webapp-alb": {
+            "id": "webapp-alb",
+            "path": "compute/webapp-alb",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "compute/webapp-alb/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                  "aws:cdk:cloudformation:props": {
+                    "name": "webapp-alb",
+                    "scheme": "internet-facing",
+                    "securityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "webappalbSecurityGroup9E1600B5",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnets": [
+                      {
+                        "Fn::ImportValue": "networking:ExportsOutputRefwebappvpcPUBLICSubnet1SubnetEEEB38141649E5BC"
+                      },
+                      {
+                        "Fn::ImportValue": "networking:ExportsOutputRefwebappvpcPUBLICSubnet2Subnet9E45D106707E40BE"
+                      }
+                    ],
+                    "type": "application"
+                  }
+                }
+              },
+              "SecurityGroup": {
+                "id": "SecurityGroup",
+                "path": "compute/webapp-alb/SecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "compute/webapp-alb/SecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Automatically created Security Group for ELB computewebappalb8F0BF991",
+                        "securityGroupIngress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "ipProtocol": "tcp",
+                            "fromPort": 80,
+                            "toPort": 80,
+                            "description": "Internet access ALB 80"
+                          }
+                        ],
+                        "vpcId": {
+                          "Fn::ImportValue": "networking:ExportsOutputRefwebappvpc0C6EE273E8F9B970"
+                        }
+                      }
+                    }
+                  },
+                  "to computewebappautoscalingInstanceSecurityGroup0512A285:80": {
+                    "id": "to computewebappautoscalingInstanceSecurityGroup0512A285:80",
+                    "path": "compute/webapp-alb/SecurityGroup/to computewebappautoscalingInstanceSecurityGroup0512A285:80",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupEgress",
+                      "aws:cdk:cloudformation:props": {
+                        "groupId": {
+                          "Fn::GetAtt": [
+                            "webappalbSecurityGroup9E1600B5",
+                            "GroupId"
+                          ]
+                        },
+                        "ipProtocol": "tcp",
+                        "description": "ALB access 80 port of EC2 in Autoscaling Group",
+                        "destinationSecurityGroupId": {
+                          "Fn::GetAtt": [
+                            "webappautoscalingInstanceSecurityGroupE4BB2108",
+                            "GroupId"
+                          ]
+                        },
+                        "fromPort": 80,
+                        "toPort": 80
+                      }
+                    }
+                  }
+                }
+              },
+              "my80": {
+                "id": "my80",
+                "path": "compute/webapp-alb/my80",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "compute/webapp-alb/my80/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                      "aws:cdk:cloudformation:props": {
+                        "defaultActions": [
+                          {
+                            "type": "forward",
+                            "targetGroupArn": {
+                              "Ref": "webappalbmy80addTargetGroupGroup553ACDC6"
+                            }
+                          }
+                        ],
+                        "loadBalancerArn": {
+                          "Ref": "webappalb6D6B6EB9"
+                        },
+                        "port": 80,
+                        "protocol": "HTTP"
+                      }
+                    }
+                  },
+                  "addTargetGroupGroup": {
+                    "id": "addTargetGroupGroup",
+                    "path": "compute/webapp-alb/my80/addTargetGroupGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "compute/webapp-alb/my80/addTargetGroupGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "port": 80,
+                            "protocol": "HTTP",
+                            "targetType": "instance",
+                            "vpcId": {
+                              "Fn::ImportValue": "networking:ExportsOutputRefwebappvpc0C6EE273E8F9B970"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "Output": {
+            "id": "Output",
+            "path": "compute/Output"
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "compute/Exports",
+            "children": {
+              "Output{\"Fn::GetAtt\":[\"webappautoscalingInstanceSecurityGroupE4BB2108\",\"GroupId\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"webappautoscalingInstanceSecurityGroupE4BB2108\",\"GroupId\"]}",
+                "path": "compute/Exports/Output{\"Fn::GetAtt\":[\"webappautoscalingInstanceSecurityGroupE4BB2108\",\"GroupId\"]}"
+              }
+            }
+          }
+        }
+      },
+      "database": {
+        "id": "database",
+        "path": "database",
+        "children": {
+          "para-group-mysql": {
+            "id": "para-group-mysql",
+            "path": "database/para-group-mysql"
+          },
+          "webapp-db": {
+            "id": "webapp-db",
+            "path": "database/webapp-db",
+            "children": {
+              "SubnetGroup": {
+                "id": "SubnetGroup",
+                "path": "database/webapp-db/SubnetGroup",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::RDS::DBSubnetGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "dbSubnetGroupDescription": "Subnet group for webapp-db database",
+                    "subnetIds": [
+                      {
+                        "Fn::ImportValue": "networking:ExportsOutputRefwebappvpcPRIVATESubnet1SubnetF3151BD1A331375F"
+                      },
+                      {
+                        "Fn::ImportValue": "networking:ExportsOutputRefwebappvpcPRIVATESubnet2Subnet184E570066995D43"
+                      }
+                    ]
+                  }
+                }
+              },
+              "SecurityGroup": {
+                "id": "SecurityGroup",
+                "path": "database/webapp-db/SecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "database/webapp-db/SecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Security group for webapp-db database",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "vpcId": {
+                          "Fn::ImportValue": "networking:ExportsOutputRefwebappvpc0C6EE273E8F9B970"
+                        }
+                      }
+                    }
+                  },
+                  "from computewebappautoscalingInstanceSecurityGroup0512A285:{IndirectPort}": {
+                    "id": "from computewebappautoscalingInstanceSecurityGroup0512A285:{IndirectPort}",
+                    "path": "database/webapp-db/SecurityGroup/from computewebappautoscalingInstanceSecurityGroup0512A285:{IndirectPort}",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                      "aws:cdk:cloudformation:props": {
+                        "ipProtocol": "tcp",
+                        "description": "EC2 Autoscaling Group access MySQL",
+                        "fromPort": {
+                          "Fn::GetAtt": [
+                            "webappdb436941E3",
+                            "Endpoint.Port"
+                          ]
+                        },
+                        "groupId": {
+                          "Fn::GetAtt": [
+                            "webappdbSecurityGroupDBC735A5",
+                            "GroupId"
+                          ]
+                        },
+                        "sourceSecurityGroupId": {
+                          "Fn::ImportValue": "compute:ExportsOutputFnGetAttwebappautoscalingInstanceSecurityGroupE4BB2108GroupId15D40CC5"
+                        },
+                        "toPort": {
+                          "Fn::GetAtt": [
+                            "webappdb436941E3",
+                            "Endpoint.Port"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Secret": {
+                "id": "Secret",
+                "path": "database/webapp-db/Secret",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "database/webapp-db/Secret/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SecretsManager::Secret",
+                      "aws:cdk:cloudformation:props": {
+                        "description": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "Generated by the CDK for stack: ",
+                              {
+                                "Ref": "AWS::StackName"
+                              }
+                            ]
+                          ]
+                        },
+                        "generateSecretString": {
+                          "passwordLength": 30,
+                          "secretStringTemplate": "{\"username\":\"admin\"}",
+                          "generateStringKey": "password",
+                          "excludeCharacters": "\"@/\\"
+                        }
+                      }
+                    }
+                  },
+                  "Attachment": {
+                    "id": "Attachment",
+                    "path": "database/webapp-db/Secret/Attachment",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "database/webapp-db/Secret/Attachment/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::SecretsManager::SecretTargetAttachment",
+                          "aws:cdk:cloudformation:props": {
+                            "secretId": {
+                              "Ref": "webappdbSecretEB615BDB"
+                            },
+                            "targetId": {
+                              "Ref": "webappdb436941E3"
+                            },
+                            "targetType": "AWS::RDS::DBInstance"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "database/webapp-db/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::RDS::DBInstance",
+                  "aws:cdk:cloudformation:props": {
+                    "dbInstanceClass": "db.t2.small",
+                    "allocatedStorage": "100",
+                    "backupRetentionPeriod": 7,
+                    "copyTagsToSnapshot": true,
+                    "dbParameterGroupName": "default.mysql5.7",
+                    "dbSubnetGroupName": {
+                      "Ref": "webappdbSubnetGroup77139DA3"
+                    },
+                    "deleteAutomatedBackups": true,
+                    "deletionProtection": false,
+                    "enableCloudwatchLogsExports": [
+                      "audit",
+                      "error",
+                      "general",
+                      "slowquery"
+                    ],
+                    "engine": "mysql",
+                    "engineVersion": "5.7.22",
+                    "masterUsername": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "{{resolve:secretsmanager:",
+                          {
+                            "Ref": "webappdbSecretEB615BDB"
+                          },
+                          ":SecretString:username::}}"
+                        ]
+                      ]
+                    },
+                    "masterUserPassword": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "{{resolve:secretsmanager:",
+                          {
+                            "Ref": "webappdbSecretEB615BDB"
+                          },
+                          ":SecretString:password::}}"
+                        ]
+                      ]
+                    },
+                    "multiAz": false,
+                    "storageType": "gp2",
+                    "vpcSecurityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "webappdbSecurityGroupDBC735A5",
+                          "GroupId"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

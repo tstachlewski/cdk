@@ -1,0 +1,474 @@
+{
+  "Resources": {
+    "webappbastionInstanceSecurityGroupBCBAD2DA": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "compute/webapp-bastion/Resource/InstanceSecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Internet access SSH",
+            "FromPort": 22,
+            "IpProtocol": "tcp",
+            "ToPort": 22
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BastionHost"
+          }
+        ],
+        "VpcId": {
+          "Fn::ImportValue": "networking:ExportsOutputRefwebappvpc0C6EE273E8F9B970"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-bastion/Resource/InstanceSecurityGroup/Resource"
+      }
+    },
+    "webappbastionInstanceRoleCCAD90A4": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "ec2.",
+                      {
+                        "Ref": "AWS::URLSuffix"
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BastionHost"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-bastion/Resource/InstanceRole/Resource"
+      }
+    },
+    "webappbastionInstanceRoleDefaultPolicy187EA29A": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "ssmmessages:*",
+                "ssm:UpdateInstanceInformation",
+                "ec2messages:*"
+              ],
+              "Effect": "Allow",
+              "Resource": "*"
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "webappbastionInstanceRoleDefaultPolicy187EA29A",
+        "Roles": [
+          {
+            "Ref": "webappbastionInstanceRoleCCAD90A4"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-bastion/Resource/InstanceRole/DefaultPolicy/Resource"
+      }
+    },
+    "webappbastionInstanceProfile7E0622DF": {
+      "Type": "AWS::IAM::InstanceProfile",
+      "Properties": {
+        "Roles": [
+          {
+            "Ref": "webappbastionInstanceRoleCCAD90A4"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-bastion/Resource/InstanceProfile"
+      }
+    },
+    "webappbastionFDE36D2D": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "AvailabilityZone": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "IamInstanceProfile": {
+          "Ref": "webappbastionInstanceProfile7E0622DF"
+        },
+        "ImageId": {
+          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+        },
+        "InstanceType": "t3.nano",
+        "KeyName": "accesskeys",
+        "SecurityGroupIds": [
+          {
+            "Fn::GetAtt": [
+              "webappbastionInstanceSecurityGroupBCBAD2DA",
+              "GroupId"
+            ]
+          }
+        ],
+        "SubnetId": {
+          "Fn::ImportValue": "networking:ExportsOutputRefwebappvpcPUBLICSubnet1SubnetEEEB38141649E5BC"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BastionHost"
+          }
+        ],
+        "UserData": {
+          "Fn::Base64": "#!/bin/bash\nyum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm"
+        }
+      },
+      "DependsOn": [
+        "webappbastionInstanceRoleDefaultPolicy187EA29A",
+        "webappbastionInstanceRoleCCAD90A4"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-bastion/Resource/Resource"
+      }
+    },
+    "webappautoscalingInstanceSecurityGroupE4BB2108": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "compute/webapp-autoscaling/InstanceSecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "compute/webapp-autoscaling"
+          }
+        ],
+        "VpcId": {
+          "Fn::ImportValue": "networking:ExportsOutputRefwebappvpc0C6EE273E8F9B970"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-autoscaling/InstanceSecurityGroup/Resource"
+      }
+    },
+    "webappautoscalingInstanceSecurityGroupfromcomputewebappalbSecurityGroup896706AF808036436D": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "IpProtocol": "tcp",
+        "Description": "ALB access 80 port of EC2 in Autoscaling Group",
+        "FromPort": 80,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "webappautoscalingInstanceSecurityGroupE4BB2108",
+            "GroupId"
+          ]
+        },
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "webappalbSecurityGroup9E1600B5",
+            "GroupId"
+          ]
+        },
+        "ToPort": 80
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-autoscaling/InstanceSecurityGroup/from computewebappalbSecurityGroup896706AF:80"
+      }
+    },
+    "webappautoscalingInstanceRoleDF3DFDA4": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "ec2.",
+                      {
+                        "Ref": "AWS::URLSuffix"
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "compute/webapp-autoscaling"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-autoscaling/InstanceRole/Resource"
+      }
+    },
+    "webappautoscalingInstanceProfile455B5E36": {
+      "Type": "AWS::IAM::InstanceProfile",
+      "Properties": {
+        "Roles": [
+          {
+            "Ref": "webappautoscalingInstanceRoleDF3DFDA4"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-autoscaling/InstanceProfile"
+      }
+    },
+    "webappautoscalingLaunchConfig0EE48EA8": {
+      "Type": "AWS::AutoScaling::LaunchConfiguration",
+      "Properties": {
+        "ImageId": {
+          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+        },
+        "InstanceType": "t3.micro",
+        "IamInstanceProfile": {
+          "Ref": "webappautoscalingInstanceProfile455B5E36"
+        },
+        "KeyName": "accesskeys",
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "webappautoscalingInstanceSecurityGroupE4BB2108",
+              "GroupId"
+            ]
+          }
+        ],
+        "UserData": {
+          "Fn::Base64": "#!/bin/bash\nyum update -y\nyum install -y httpd24 php56 mysql55-server php56-mysqlnd\nservice httpd start\nchkconfig httpd on\ncd /var/www/html\naws s3 cp --no-sign-request s3://tomash-public/examples/php/index.php ."
+        }
+      },
+      "DependsOn": [
+        "webappautoscalingInstanceRoleDF3DFDA4"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-autoscaling/LaunchConfig"
+      }
+    },
+    "webappautoscalingASG748CE6F9": {
+      "Type": "AWS::AutoScaling::AutoScalingGroup",
+      "Properties": {
+        "MaxSize": "2",
+        "MinSize": "2",
+        "DesiredCapacity": "2",
+        "LaunchConfigurationName": {
+          "Ref": "webappautoscalingLaunchConfig0EE48EA8"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "PropagateAtLaunch": true,
+            "Value": "compute/webapp-autoscaling"
+          }
+        ],
+        "TargetGroupARNs": [
+          {
+            "Ref": "webappalbmy80addTargetGroupGroup553ACDC6"
+          }
+        ],
+        "VPCZoneIdentifier": [
+          {
+            "Fn::ImportValue": "networking:ExportsOutputRefwebappvpcPRIVATESubnet1SubnetF3151BD1A331375F"
+          },
+          {
+            "Fn::ImportValue": "networking:ExportsOutputRefwebappvpcPRIVATESubnet2Subnet184E570066995D43"
+          }
+        ]
+      },
+      "UpdatePolicy": {
+        "AutoScalingScheduledAction": {
+          "IgnoreUnmodifiedGroupSizeProperties": true
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-autoscaling/ASG"
+      }
+    },
+    "webappalb6D6B6EB9": {
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Properties": {
+        "Name": "webapp-alb",
+        "Scheme": "internet-facing",
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "webappalbSecurityGroup9E1600B5",
+              "GroupId"
+            ]
+          }
+        ],
+        "Subnets": [
+          {
+            "Fn::ImportValue": "networking:ExportsOutputRefwebappvpcPUBLICSubnet1SubnetEEEB38141649E5BC"
+          },
+          {
+            "Fn::ImportValue": "networking:ExportsOutputRefwebappvpcPUBLICSubnet2Subnet9E45D106707E40BE"
+          }
+        ],
+        "Type": "application"
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-alb/Resource"
+      }
+    },
+    "webappalbSecurityGroup9E1600B5": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Automatically created Security Group for ELB computewebappalb8F0BF991",
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Internet access ALB 80",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80
+          }
+        ],
+        "VpcId": {
+          "Fn::ImportValue": "networking:ExportsOutputRefwebappvpc0C6EE273E8F9B970"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-alb/SecurityGroup/Resource"
+      }
+    },
+    "webappalbSecurityGrouptocomputewebappautoscalingInstanceSecurityGroup0512A285808162DAD1": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Fn::GetAtt": [
+            "webappalbSecurityGroup9E1600B5",
+            "GroupId"
+          ]
+        },
+        "IpProtocol": "tcp",
+        "Description": "ALB access 80 port of EC2 in Autoscaling Group",
+        "DestinationSecurityGroupId": {
+          "Fn::GetAtt": [
+            "webappautoscalingInstanceSecurityGroupE4BB2108",
+            "GroupId"
+          ]
+        },
+        "FromPort": 80,
+        "ToPort": 80
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-alb/SecurityGroup/to computewebappautoscalingInstanceSecurityGroup0512A285:80"
+      }
+    },
+    "webappalbmy80F945FE8F": {
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "TargetGroupArn": {
+              "Ref": "webappalbmy80addTargetGroupGroup553ACDC6"
+            },
+            "Type": "forward"
+          }
+        ],
+        "LoadBalancerArn": {
+          "Ref": "webappalb6D6B6EB9"
+        },
+        "Port": 80,
+        "Protocol": "HTTP"
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-alb/my80/Resource"
+      }
+    },
+    "webappalbmy80addTargetGroupGroup553ACDC6": {
+      "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Properties": {
+        "Port": 80,
+        "Protocol": "HTTP",
+        "TargetType": "instance",
+        "VpcId": {
+          "Fn::ImportValue": "networking:ExportsOutputRefwebappvpc0C6EE273E8F9B970"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "compute/webapp-alb/my80/addTargetGroupGroup/Resource"
+      }
+    }
+  },
+  "Outputs": {
+    "webappbastionBastionHostIdE52F53C8": {
+      "Description": "Instance ID of the bastion host. Use this to connect via SSM Session Manager",
+      "Value": {
+        "Ref": "webappbastionFDE36D2D"
+      }
+    },
+    "Output": {
+      "Value": {
+        "Fn::GetAtt": [
+          "webappalb6D6B6EB9",
+          "DNSName"
+        ]
+      }
+    },
+    "ExportsOutputFnGetAttwebappautoscalingInstanceSecurityGroupE4BB2108GroupId15D40CC5": {
+      "Value": {
+        "Fn::GetAtt": [
+          "webappautoscalingInstanceSecurityGroupE4BB2108",
+          "GroupId"
+        ]
+      },
+      "Export": {
+        "Name": "compute:ExportsOutputFnGetAttwebappautoscalingInstanceSecurityGroupE4BB2108GroupId15D40CC5"
+      }
+    }
+  },
+  "Parameters": {
+    "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": {
+      "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+      "Default": "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"
+    },
+    "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": {
+      "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+      "Default": "/aws/service/ami-amazon-linux-latest/amzn-ami-hvm-x86_64-gp2"
+    }
+  }
+}

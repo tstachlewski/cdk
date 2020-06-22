@@ -1,0 +1,1376 @@
+{
+  "version": "5.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "networking": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "networking.template.json"
+      },
+      "metadata": {
+        "/networking/webapp-vpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpc0C6EE273",
+            "trace": [
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:345:25)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PUBLICSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPUBLICSubnet1SubnetEEEB3814",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:623:24)",
+              "new PublicSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:780:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PUBLICSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPUBLICSubnet1RouteTable9FF45B41",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:638:23)",
+              "new PublicSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:780:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PUBLICSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPUBLICSubnet1RouteTableAssociation70CC3AF6",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:643:9)",
+              "new PublicSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:780:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PUBLICSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPUBLICSubnet1DefaultRoute871FD3B1",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:670:23)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:375:32)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PUBLICSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPUBLICSubnet1EIPA7A3DFEF",
+            "trace": [
+              "PublicSubnet.addNatGateway (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:791:27)",
+              "NatGatewayProvider.configureNat (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/nat.js:57:33)",
+              "Vpc.createNatGateways (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:510:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:381:22)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PUBLICSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPUBLICSubnet1NATGateway1B501026",
+            "trace": [
+              "PublicSubnet.addNatGateway (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:789:21)",
+              "NatGatewayProvider.configureNat (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/nat.js:57:33)",
+              "Vpc.createNatGateways (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:510:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:381:22)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PUBLICSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPUBLICSubnet2Subnet9E45D106",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:623:24)",
+              "new PublicSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:780:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PUBLICSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPUBLICSubnet2RouteTable122BF0E3",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:638:23)",
+              "new PublicSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:780:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PUBLICSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPUBLICSubnet2RouteTableAssociation0E612562",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:643:9)",
+              "new PublicSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:780:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:552:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PUBLICSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPUBLICSubnet2DefaultRoute71073CC9",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:670:23)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:376:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:375:32)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PUBLICSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPUBLICSubnet2EIP60D4D212",
+            "trace": [
+              "PublicSubnet.addNatGateway (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:791:27)",
+              "NatGatewayProvider.configureNat (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/nat.js:57:33)",
+              "Vpc.createNatGateways (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:510:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:381:22)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PUBLICSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPUBLICSubnet2NATGateway7E19097F",
+            "trace": [
+              "PublicSubnet.addNatGateway (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:789:21)",
+              "NatGatewayProvider.configureNat (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/nat.js:57:33)",
+              "Vpc.createNatGateways (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:510:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:381:22)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PRIVATESubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPRIVATESubnet1SubnetF3151BD1",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:623:24)",
+              "new PrivateSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:807:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:557:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PRIVATESubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPRIVATESubnet1RouteTable8A8B38CC",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:638:23)",
+              "new PrivateSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:807:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:557:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PRIVATESubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPRIVATESubnet1RouteTableAssociation861595FE",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:643:9)",
+              "new PrivateSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:807:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:557:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PRIVATESubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPRIVATESubnet1DefaultRouteBB1F10BC",
+            "trace": [
+              "PrivateSubnet.addRoute (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:711:23)",
+              "NatGatewayProvider.configureSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/nat.js:68:16)",
+              "NatGatewayProvider.configureNat (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/nat.js:62:18)",
+              "Vpc.createNatGateways (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:510:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:381:22)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PRIVATESubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPRIVATESubnet2Subnet184E5700",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:623:24)",
+              "new PrivateSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:807:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:557:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PRIVATESubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPRIVATESubnet2RouteTableA30D5373",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:638:23)",
+              "new PrivateSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:807:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:557:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PRIVATESubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPRIVATESubnet2RouteTableAssociation116CE876",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:643:9)",
+              "new PrivateSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:807:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:557:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/PRIVATESubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcPRIVATESubnet2DefaultRoute18D38D85",
+            "trace": [
+              "PrivateSubnet.addRoute (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:711:23)",
+              "NatGatewayProvider.configureSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/nat.js:68:16)",
+              "NatGatewayProvider.configureNat (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/nat.js:62:18)",
+              "Vpc.createNatGateways (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:510:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:381:22)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/ISOLATEDSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcISOLATEDSubnet1SubnetDC1AC2C1",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:623:24)",
+              "new PrivateSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:807:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:562:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/ISOLATEDSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcISOLATEDSubnet1RouteTable8A980272",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:638:23)",
+              "new PrivateSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:807:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:562:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/ISOLATEDSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcISOLATEDSubnet1RouteTableAssociation8DD20FAF",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:643:9)",
+              "new PrivateSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:807:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:562:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/ISOLATEDSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcISOLATEDSubnet2Subnet3EA396DB",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:623:24)",
+              "new PrivateSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:807:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:562:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/ISOLATEDSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcISOLATEDSubnet2RouteTableB4C6BD79",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:638:23)",
+              "new PrivateSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:807:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:562:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/ISOLATEDSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcISOLATEDSubnet2RouteTableAssociation482D3ED4",
+            "trace": [
+              "new Subnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:643:9)",
+              "new PrivateSubnet (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:807:9)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:562:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:536:32)",
+              "Vpc.createSubnets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:527:18)",
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:365:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcIGW8AC6CB3B",
+            "trace": [
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:369:25)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/webapp-vpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappvpcVPCGW27AC9163",
+            "trace": [
+              "new Vpc (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:371:25)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/Output": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Output",
+            "trace": [
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/Exports/Output{\"Ref\":\"webappvpc0C6EE273\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefwebappvpc0C6EE273E8F9B970",
+            "trace": [
+              "createImportValue (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:154:9)",
+              "resolveValue (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:86:12)",
+              "Object.resolveReferences (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:27:30)",
+              "Object.prepareApp (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/prepare-app.js:37:16)",
+              "Object.synthesize (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/synthesis.js:14:19)",
+              "App.synth (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/stage.js:72:41)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:51",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:25",
+              "Kernel._ensureSync (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8355:20)",
+              "Kernel.invoke (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7729:26)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/Exports/Output{\"Ref\":\"webappvpcPUBLICSubnet1SubnetEEEB3814\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefwebappvpcPUBLICSubnet1SubnetEEEB38141649E5BC",
+            "trace": [
+              "createImportValue (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:154:9)",
+              "resolveValue (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:86:12)",
+              "Object.resolveReferences (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:27:30)",
+              "Object.prepareApp (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/prepare-app.js:37:16)",
+              "Object.synthesize (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/synthesis.js:14:19)",
+              "App.synth (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/stage.js:72:41)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:51",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:25",
+              "Kernel._ensureSync (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8355:20)",
+              "Kernel.invoke (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7729:26)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/Exports/Output{\"Ref\":\"webappvpcPRIVATESubnet1SubnetF3151BD1\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefwebappvpcPRIVATESubnet1SubnetF3151BD1A331375F",
+            "trace": [
+              "createImportValue (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:154:9)",
+              "resolveValue (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:86:12)",
+              "Object.resolveReferences (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:27:30)",
+              "Object.prepareApp (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/prepare-app.js:37:16)",
+              "Object.synthesize (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/synthesis.js:14:19)",
+              "App.synth (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/stage.js:72:41)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:51",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:25",
+              "Kernel._ensureSync (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8355:20)",
+              "Kernel.invoke (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7729:26)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/Exports/Output{\"Ref\":\"webappvpcPRIVATESubnet2Subnet184E5700\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefwebappvpcPRIVATESubnet2Subnet184E570066995D43",
+            "trace": [
+              "createImportValue (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:154:9)",
+              "resolveValue (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:86:12)",
+              "Object.resolveReferences (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:27:30)",
+              "Object.prepareApp (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/prepare-app.js:37:16)",
+              "Object.synthesize (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/synthesis.js:14:19)",
+              "App.synth (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/stage.js:72:41)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:51",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:25",
+              "Kernel._ensureSync (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8355:20)",
+              "Kernel.invoke (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7729:26)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/networking/Exports/Output{\"Ref\":\"webappvpcPUBLICSubnet2Subnet9E45D106\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefwebappvpcPUBLICSubnet2Subnet9E45D106707E40BE",
+            "trace": [
+              "createImportValue (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:154:9)",
+              "resolveValue (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:86:12)",
+              "Object.resolveReferences (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:27:30)",
+              "Object.prepareApp (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/prepare-app.js:37:16)",
+              "Object.synthesize (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/synthesis.js:14:19)",
+              "App.synth (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/stage.js:72:41)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:51",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:25",
+              "Kernel._ensureSync (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8355:20)",
+              "Kernel.invoke (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7729:26)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ]
+      }
+    },
+    "compute": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "compute.template.json"
+      },
+      "dependencies": [
+        "networking"
+      ],
+      "metadata": {
+        "/compute/webapp-bastion/Resource/InstanceSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappbastionInstanceSecurityGroupBCBAD2DA",
+            "trace": [
+              "new SecurityGroup (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:174:30)",
+              "new Instance (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/instance.js:27:34)",
+              "new BastionHostLinux (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/bastion-host.js:25:25)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-bastion/Resource/InstanceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappbastionInstanceRoleCCAD90A4",
+            "trace": [
+              "new Role (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-iam/lib/role.js:42:22)",
+              "new Instance (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/instance.js:35:35)",
+              "new BastionHostLinux (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/bastion-host.js:25:25)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-bastion/Resource/InstanceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappbastionInstanceRoleDefaultPolicy187EA29A",
+            "trace": [
+              "new Policy (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-iam/lib/policy.js:31:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-iam/lib/role.js:165:34)",
+              "Role.addToPolicy (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-iam/lib/role.js:172:21)",
+              "Instance.addToRolePolicy (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/instance.js:117:19)",
+              "new BastionHostLinux (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/bastion-host.js:35:23)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-bastion/Resource/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappbastionInstanceProfile7E0622DF",
+            "trace": [
+              "new Instance (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/instance.js:39:28)",
+              "new BastionHostLinux (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/bastion-host.js:25:25)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-bastion/Resource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappbastionFDE36D2D",
+            "trace": [
+              "new Instance (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/instance.js:74:25)",
+              "new BastionHostLinux (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/bastion-host.js:25:25)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-bastion/BastionHostId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappbastionBastionHostIdE52F53C8",
+            "trace": [
+              "new BastionHostLinux (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/bastion-host.js:53:9)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ssm/lib/parameter.js:131:15)",
+              "Function.valueForTypedStringParameter (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ssm/lib/parameter.js:198:21)",
+              "AmazonLinuxImage.getImage (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/machine-image.js:141:41)",
+              "new Instance (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/instance.js:43:48)",
+              "new BastionHostLinux (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/bastion-host.js:25:25)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-autoscaling": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
+            "trace": [
+              "ConstructNode.addWarning (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/construct-compat.js:326:26)",
+              "new AutoScalingGroup (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.js:203:23)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-autoscaling/InstanceSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappautoscalingInstanceSecurityGroupE4BB2108",
+            "trace": [
+              "new SecurityGroup (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:174:30)",
+              "new AutoScalingGroup (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.js:142:30)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-autoscaling/InstanceSecurityGroup/from computewebappalbSecurityGroup896706AF:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappautoscalingInstanceSecurityGroupfromcomputewebappalbSecurityGroup896706AF808036436D",
+            "trace": [
+              "SecurityGroup.addIngressRule (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:34:13)",
+              "SecurityGroup.addIngressRule (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:224:19)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:90:31",
+              "ReactiveList.forEachAndForever (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:192:13)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:89:51",
+              "ReactiveList.forEachAndForever (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:192:13)",
+              "Connections.allowFrom (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:88:30)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:51",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:25",
+              "Kernel._ensureSync (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8355:20)",
+              "Kernel.invoke (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7729:26)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-autoscaling/InstanceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappautoscalingInstanceRoleDF3DFDA4",
+            "trace": [
+              "new Role (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-iam/lib/role.js:42:22)",
+              "new AutoScalingGroup (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.js:149:35)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-autoscaling/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappautoscalingInstanceProfile455B5E36",
+            "trace": [
+              "new AutoScalingGroup (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.js:154:28)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-autoscaling/LaunchConfig": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappautoscalingLaunchConfig0EE48EA8",
+            "trace": [
+              "new AutoScalingGroup (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.js:162:30)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-autoscaling/ASG": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappautoscalingASG748CE6F9",
+            "trace": [
+              "new AutoScalingGroup (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.js:245:33)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ssm/lib/parameter.js:131:15)",
+              "Function.valueForTypedStringParameter (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ssm/lib/parameter.js:198:21)",
+              "AmazonLinuxImage.getImage (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/machine-image.js:141:41)",
+              "new AutoScalingGroup (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-autoscaling/lib/auto-scaling-group.js:158:48)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-alb/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappalb6D6B6EB9",
+            "trace": [
+              "new BaseLoadBalancer (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-load-balancer.js:25:26)",
+              "new ApplicationLoadBalancer (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-load-balancer.js:16:9)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-alb/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappalbSecurityGroup9E1600B5",
+            "trace": [
+              "new SecurityGroup (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:174:30)",
+              "new ApplicationLoadBalancer (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-load-balancer.js:21:53)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-alb/SecurityGroup/to computewebappautoscalingInstanceSecurityGroup0512A285:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappalbSecurityGrouptocomputewebappautoscalingInstanceSecurityGroup0512A285808162DAD1",
+            "trace": [
+              "SecurityGroup.addEgressRule (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:49:13)",
+              "SecurityGroup.addEgressRule (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:250:19)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:67:31",
+              "ReactiveList.forEachAndForever (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:192:13)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:66:51",
+              "ReactiveList.forEachAndForever (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:192:13)",
+              "Connections.allowTo (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:65:30)",
+              "Connections.allowFrom (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:96:31)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:51",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:25",
+              "Kernel._ensureSync (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8355:20)",
+              "Kernel.invoke (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7729:26)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-alb/my80/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappalbmy80F945FE8F",
+            "trace": [
+              "new BaseListener (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-listener.js:12:26)",
+              "new ApplicationListener (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.js:25:9)",
+              "ApplicationLoadBalancer.addListener (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-load-balancer.js:44:16)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:51",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:25",
+              "Kernel._ensureSync (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8355:20)",
+              "Kernel.invoke (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7729:26)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/webapp-alb/my80/addTargetGroupGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappalbmy80addTargetGroupGroup553ACDC6",
+            "trace": [
+              "new TargetGroupBase (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-target-group.js:32:25)",
+              "new ApplicationTargetGroup (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-target-group.js:16:9)",
+              "ApplicationListener.addTargets (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/alb/application-listener.js:181:23)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:51",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:25",
+              "Kernel._ensureSync (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8355:20)",
+              "Kernel.invoke (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7729:26)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/Output": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Output",
+            "trace": [
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/compute/Exports/Output{\"Fn::GetAtt\":[\"webappautoscalingInstanceSecurityGroupE4BB2108\",\"GroupId\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttwebappautoscalingInstanceSecurityGroupE4BB2108GroupId15D40CC5",
+            "trace": [
+              "createImportValue (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:154:9)",
+              "resolveValue (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:86:12)",
+              "Object.resolveReferences (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/refs.js:27:30)",
+              "Object.prepareApp (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/prepare-app.js:37:16)",
+              "Object.synthesize (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/private/synthesis.js:14:19)",
+              "App.synth (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/core/lib/stage.js:72:41)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:51",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:25",
+              "Kernel._ensureSync (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8355:20)",
+              "Kernel.invoke (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7729:26)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ]
+      }
+    },
+    "database": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "database.template.json"
+      },
+      "dependencies": [
+        "networking",
+        "compute"
+      ],
+      "metadata": {
+        "/database/webapp-db/SubnetGroup": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappdbSubnetGroup77139DA3",
+            "trace": [
+              "new DatabaseInstanceNew (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-rds/lib/instance.js:208:29)",
+              "new DatabaseInstanceSource (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-rds/lib/instance.js:284:9)",
+              "new DatabaseInstance (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-rds/lib/instance.js:353:9)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/database/webapp-db/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappdbSecurityGroupDBC735A5",
+            "trace": [
+              "new SecurityGroup (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:174:30)",
+              "new DatabaseInstanceNew (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-rds/lib/instance.js:212:57)",
+              "new DatabaseInstanceSource (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-rds/lib/instance.js:284:9)",
+              "new DatabaseInstance (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-rds/lib/instance.js:353:9)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/database/webapp-db/SecurityGroup/from computewebappautoscalingInstanceSecurityGroup0512A285:{IndirectPort}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappdbSecurityGroupfromcomputewebappautoscalingInstanceSecurityGroup0512A285IndirectPort8FE32DB5",
+            "trace": [
+              "SecurityGroup.addIngressRule (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:34:13)",
+              "SecurityGroup.addIngressRule (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:224:19)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:90:31",
+              "ReactiveList.forEachAndForever (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:192:13)",
+              "/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:89:51",
+              "ReactiveList.forEachAndForever (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:192:13)",
+              "Connections.allowFrom (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:88:30)",
+              "Connections.allowDefaultPortFrom (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-ec2/lib/connections.js:135:14)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:51",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7730:25",
+              "Kernel._ensureSync (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8355:20)",
+              "Kernel.invoke (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7729:26)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/database/webapp-db/Secret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappdbSecretEB615BDB",
+            "trace": [
+              "new Secret (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.js:93:26)",
+              "new DatabaseSecret (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-rds/lib/database-secret.js:14:9)",
+              "new DatabaseInstance (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-rds/lib/instance.js:356:22)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/database/webapp-db/Secret/Attachment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappdbSecretAttachment331F4D54",
+            "trace": [
+              "new SecretTargetAttachment (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.js:212:28)",
+              "DatabaseSecret.attach (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.js:160:16)",
+              "new DatabaseInstance (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-rds/lib/instance.js:379:34)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/database/webapp-db/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webappdb436941E3",
+            "trace": [
+              "new DatabaseInstance (/private/var/folders/78/5wc14qyx09dflzmkc9kvpljmx0qjh4/T/jsii-kernel-kJr5VC/node_modules/@aws-cdk/aws-rds/lib/instance.js:361:26)",
+              "/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:49",
+              "Kernel._wrapSandboxCode (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8379:20)",
+              "Kernel._create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7906:26)",
+              "Kernel.create (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7650:21)",
+              "KernelHost.processRequest (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7439:28)",
+              "KernelHost.run (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7377:14)",
+              "Immediate._onImmediate (/Users/stachlew/Desktop/session/webapp/.env/lib/python3.7/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7380:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/cdk-assets-schema": "1.46.0",
+      "@aws-cdk/cloud-assembly-schema": "1.46.0",
+      "@aws-cdk/cx-api": "1.46.0",
+      "@aws-cdk/core": "1.46.0",
+      "@aws-cdk/region-info": "1.46.0",
+      "@aws-cdk/aws-iam": "1.46.0",
+      "@aws-cdk/aws-cloudwatch": "1.46.0",
+      "@aws-cdk/aws-logs": "1.46.0",
+      "@aws-cdk/aws-events": "1.46.0",
+      "@aws-cdk/aws-kms": "1.46.0",
+      "@aws-cdk/aws-s3": "1.46.0",
+      "@aws-cdk/aws-ssm": "1.46.0",
+      "@aws-cdk/aws-ec2": "1.46.0",
+      "@aws-cdk/aws-autoscaling-common": "1.46.0",
+      "@aws-cdk/aws-elasticloadbalancing": "1.46.0",
+      "@aws-cdk/assets": "1.46.0",
+      "@aws-cdk/aws-s3-assets": "1.46.0",
+      "@aws-cdk/aws-sqs": "1.46.0",
+      "@aws-cdk/aws-lambda": "1.46.0",
+      "@aws-cdk/aws-route53": "1.46.0",
+      "@aws-cdk/aws-certificatemanager": "1.46.0",
+      "@aws-cdk/aws-elasticloadbalancingv2": "1.46.0",
+      "@aws-cdk/aws-sns": "1.46.0",
+      "@aws-cdk/aws-autoscaling": "1.46.0",
+      "@aws-cdk/aws-sam": "1.46.0",
+      "@aws-cdk/aws-secretsmanager": "1.46.0",
+      "@aws-cdk/aws-rds": "1.46.0",
+      "jsii-runtime": "Python/3.7.7"
+    }
+  }
+}
